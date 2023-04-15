@@ -18,6 +18,10 @@ export default function App() {
   const HandleDivide =()=>{
     setCounter(Number(inputvalue) / Number(inputvalue2));
   }
+   const HandlePower =()=>{
+    setCounter(Math.pow(Number(inputvalue),2));
+    //Math.pow(base, exponent)
+  }
   const HandleClear =()=>{
     setCounter('');
     setInputvalue('')
@@ -59,15 +63,17 @@ export default function App() {
         <td>
           {' '}
           <button type="button" onClick={HandleDivide}>/</button>{' '}
-          <button type="button" onClick={HandleClear}>Clear</button>
         </td>
-       
+        <button type="button" onClick={HandlePower}>^2</button>
         <br />
         <br />
         <span>
           {' '}
           <input value={counter} placeholder=" Your Answer"></input>
         </span>
+        <br/>
+        <br/>
+        <button type="button" onClick={HandleClear}>Clear</button>
       </div>
     </>
   );
